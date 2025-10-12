@@ -1,6 +1,13 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
+
+if (!apiKey || apiKey === 'undefined') {
+  console.error('API key not found. Expected process.env.API_KEY to be set.');
+  throw new Error('API Key must be set. Please check your environment configuration.');
+}
+
+const ai = new GoogleGenAI({ apiKey });
 
 export const generateMealPlanStream = async (days: number, people: number, excludedIngredients: string) => {
 

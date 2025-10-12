@@ -31,6 +31,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
+      - name: Check API Key
+        run: |
+          if [ -z "$API_KEY" ]; then
+            echo "❌ API_KEY is not set or empty"
+            echo "Make sure you have added API_KEY to repository secrets"
+            exit 1
+          else
+            echo "✅ API_KEY is set"
+          fi
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+      
       - name: Build
         run: npm run build
         env:
