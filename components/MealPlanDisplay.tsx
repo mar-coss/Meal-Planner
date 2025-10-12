@@ -1,5 +1,5 @@
 import React from 'react';
-import { CartIcon } from './IconComponents';
+import { CartIcon } from './IconComponents.tsx';
 
 interface MealPlanDisplayProps {
   mealPlan: string;

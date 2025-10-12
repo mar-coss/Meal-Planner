@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import MealPlannerForm from './components/MealPlannerForm';
-import MealPlanDisplay from './components/MealPlanDisplay';
-import LoadingSpinner from './components/LoadingSpinner';
-import { generateMealPlanStream } from './services/geminiService';
+import MealPlannerForm from './components/MealPlannerForm.tsx';
+import MealPlanDisplay from './components/MealPlanDisplay.tsx';
+import LoadingSpinner from './components/LoadingSpinner.tsx';
+import { generateMealPlanStream } from './services/geminiService.ts';
 
 function App() {
   const [mealPlan, setMealPlan] = useState('');

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SaveIcon, TrashIcon } from './IconComponents';
+import { SaveIcon, TrashIcon } from './IconComponents.tsx';
 
 interface MealPlannerFormProps {
   onSubmit: (days: number, people: number, excludedIngredients: string) => void;
