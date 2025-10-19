@@ -10,6 +10,8 @@ if (!apiKey || apiKey === 'undefined') {
 const ai = new GoogleGenAI({ apiKey });
 
 export const generateMealPlanStream = async (days: number, people: number, excludedIngredients: string) => {
+  console.log('Current origin:', window.location.origin);
+  console.log('Current href:', window.location.href);
 
   const exclusionsPrompt = excludedIngredients.trim()
     ? `\nIMPORTANT: The meal plan MUST NOT, under any circumstances, include the following ingredients: ${excludedIngredients.trim()}.`
